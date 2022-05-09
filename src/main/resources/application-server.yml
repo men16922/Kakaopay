@@ -1,0 +1,8 @@
+server:
+  port: 8443
+  server-header: kakopay
+  max-http-header-size: 8KB
+  error:
+    whitelabel:
+      enabled: true
+
