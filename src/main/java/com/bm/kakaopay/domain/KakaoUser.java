@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDate;
 
+/**
+ * 사용자 도메인
+ */
 @ToString
 @Getter
 @Setter

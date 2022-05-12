@@ -1,10 +1,12 @@
 package com.bm.kakaopay.algorithm;
 
 
-import org.hibernate.annotations.Entity;
-
 import java.util.*;
 
+/**
+ * Node 클래스
+ * @param <E> 
+ */
 class Node<E> {
 
     E data;
@@ -28,6 +30,10 @@ class Node<E> {
 
 }
 
+/**
+ * 이중 연결 리스트 클래스
+ * @param <E> 
+ */
 class DLinkedList<E> implements List<E>, Cloneable {
 
     private Node<E> head;	// 노드의 첫 부분
@@ -498,6 +504,9 @@ class DLinkedList<E> implements List<E>, Cloneable {
     }
 }
 
+/**
+ * 과제 3
+ */
 public class p3 {
 
     public static void main(String[] args) {

@@ -7,6 +7,7 @@ import com.bm.kakaopay.dto.history.AccountHistoryDto;
 import com.bm.kakaopay.exception.AccountHistoryFailException;
 import com.bm.kakaopay.service.AccountHistoryService;
 import com.bm.kakaopay.util.ApiUtils;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +30,8 @@ public class AccountHistoryController {
     private final AccountHistoryService accountHistoryService;
 
     @PostMapping(path = "add")
+    @Operation(summary = "계좌내역 추가",
+            description = "계좌내역 추가")
     public ApiResult<AccountHistoryAddResponse> add(@Valid @RequestBody AccountHistoryAddRequest accountHistoryAddRequest) {
         return ApiUtils.success(accountHistoryService.addAccountHistory(accountHistoryAddRequest)
                 .orElseThrow(() -> new AccountHistoryFailException("계좌내역 추가에 실패하였습니다."))
@@ -36,6 +39,8 @@ public class AccountHistoryController {
     }
 
     @GetMapping(path = "list")
+    @Operation(summary = "계좌내역 조회",
+            description = "계좌내역 조회")
     public ApiResult<List<AccountHistoryDto>> list() {
         return ApiUtils.success(accountHistoryService.listAccountHistory().stream()
         .map(AccountHistoryDto::new)

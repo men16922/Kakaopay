@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Csv 파싱용 유틸
+ */
 @Component
 public class CsvParser {
     private static final int COLUMN_START = 0;

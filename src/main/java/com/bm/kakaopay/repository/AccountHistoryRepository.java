@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * 계좌내역 Repository
+ */
 @Repository
 public interface AccountHistoryRepository extends JpaRepository<AccountHistory, Long> {
 //    List<AccountHistory> findAllByUserAccountIn(List<String> userAccount);

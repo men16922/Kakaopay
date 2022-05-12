@@ -10,6 +10,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Csv 읽기용 유틸
+ */
 @Component
 public class CsvReader {
 

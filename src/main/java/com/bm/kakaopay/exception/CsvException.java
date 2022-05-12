@@ -1,5 +1,8 @@
 package com.bm.kakaopay.exception;
 
+/**
+ * Csv 관련 Exception 처리
+ */
 public class CsvException extends RuntimeException {
 
     public CsvException(final Throwable e) {

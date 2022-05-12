@@ -10,6 +10,9 @@ import org.apache.logging.log4j.core.config.plugins.validation.constraints.Requi
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * 사용자 추가 응답 Dto
+ */
 @ToString
 @Setter
 @Getter

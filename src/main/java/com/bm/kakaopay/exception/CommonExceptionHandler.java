@@ -13,6 +13,9 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 
 import static com.bm.kakaopay.util.ApiUtils.error;
 
+/**
+ * 공통 Exception Handler
+ */
 @Slf4j
 @ControllerAdvice
 public class CommonExceptionHandler {

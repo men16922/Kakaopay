@@ -12,6 +12,9 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Application 시작시 csv file 읽어 h2 db에 저장
+ */
 @Slf4j
 @Component
 @RequiredArgsConstructor

@@ -6,6 +6,9 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+/**
+ * 계좌내역 도메인
+ */
 @ToString
 @Getter
 @Setter

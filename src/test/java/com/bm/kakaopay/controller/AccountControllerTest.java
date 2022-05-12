@@ -16,6 +16,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+/**
+ * 계좌 관련 API 테스트 클래스
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -56,7 +59,7 @@ class AccountControllerTest {
                 post("/api/accounts/add")
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON)
-                        .content("{\"user_id\":8,\"user_account\":\"1000-44\"}")
+                        .content("{\"user_id\":8,\"user_account\":\"1000-60\"}")
         );
 
         result.andDo(print())

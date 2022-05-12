@@ -17,6 +17,9 @@ import java.util.Optional;
 
 import static com.bm.kakaopay.code.Result.ACCOUNT_ADD_SUCCESS;
 
+/**
+ * 계좌 서비스
+ */
 @Slf4j
 @RequiredArgsConstructor
 @Service
@@ -26,12 +29,17 @@ public class AccountService {
 
     private final KakaoUserRepository kakaoUserRepository;
 
+    /**
+     * 계좌 추가
+     * @param accountAddRequest
+     * @return
+     */
     @Transactional(rollbackFor = TransactionalException.class)
     public Optional<AccountAddResponse> addAccount(AccountAddRequest accountAddRequest) {
 
         kakaoUserRepository.findById(accountAddRequest.getUserId()).orElseThrow(() -> new AccountFailException("user_id 조회에 실패하였습니다."));
 
-        if(accountRepository.findByUserAccount(accountAddRequest.getUserAccount()) != null) {
+        if(accountRepository.findByUserAccount(accountAddRequest.getUserAccount()).isPresent()) {
             throw new AccountFailException("중복된 계좌번호입니다");
         }
 
@@ -51,6 +59,10 @@ public class AccountService {
         return accountAddResponse;
     }
 
+    /**
+     * 계좌 조회
+     * @return 
+     */
     @Transactional(readOnly = true)
     public List<Account> listAccount() {
         return accountRepository.findAll();

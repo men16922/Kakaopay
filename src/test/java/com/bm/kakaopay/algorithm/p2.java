@@ -3,6 +3,9 @@ package com.bm.kakaopay.algorithm;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * 과제 2
+ */
 public class p2 {
 
     public static void main(String[] args) {

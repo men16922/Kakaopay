@@ -1,5 +1,8 @@
 package com.bm.kakaopay.exception;
 
+/**
+ * 예치금 관련 작업 Exception 처리
+ */
 public class DepositFailException extends RuntimeException{
 
     public DepositFailException(String msg) {

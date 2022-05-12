@@ -6,6 +6,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
+/**
+ * ApiResult 사용을 위한 Util
+ */
 @Component
 @RequiredArgsConstructor
 public class ApiUtils {

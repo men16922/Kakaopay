@@ -1,5 +1,10 @@
+package com.bm.kakaopay.algorithm;
+
 import java.util.Scanner;
 
+/**
+ * 과제 1
+ */
 public class p1 {
 
     public static void main(String[] args) {

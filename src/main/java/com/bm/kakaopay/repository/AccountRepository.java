@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * 계좌 Repository
+ */
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Long> {
 

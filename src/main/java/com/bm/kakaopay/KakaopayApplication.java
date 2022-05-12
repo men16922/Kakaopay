@@ -9,6 +9,9 @@ import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
 
 import javax.annotation.PreDestroy;
 
+/**
+ * 부트 메인클래스
+ */
 @Slf4j
 @SpringBootApplication
 @EnableAutoConfiguration

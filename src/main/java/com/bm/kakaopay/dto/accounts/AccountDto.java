@@ -9,6 +9,9 @@ import lombok.ToString;
 
 import static org.springframework.beans.BeanUtils.copyProperties;
 
+/**
+ * 계좌 Dto
+ */
 @Getter
 @Setter
 @ToString

@@ -1,5 +1,8 @@
 package com.bm.kakaopay.exception;
 
+/**
+ * 사용자 관련 Exception 처리
+ */
 public class UserFailException extends RuntimeException{
 
     public UserFailException(String msg) {

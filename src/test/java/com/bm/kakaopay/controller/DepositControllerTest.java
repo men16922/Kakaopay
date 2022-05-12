@@ -15,6 +15,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+/**
+ * 예치금 관련 API 테스트 클래스
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -35,7 +38,7 @@ class DepositControllerTest {
                 get("/api/deposit/accounts")
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON)
-                        .content("{\"user_id\":1}")
+                        .content("{\"user_id\":8}")
         );
 
         result.andDo(print())
@@ -59,7 +62,7 @@ class DepositControllerTest {
         result.andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(handler().handlerType(DepositController.class))
-                .andExpect(handler().methodName("yearTotalAmount"))
+                .andExpect(handler().methodName("ageGroupAmount"))
                 .andExpect(jsonPath("$.success", is(true)))
         ;
     }
@@ -69,7 +72,7 @@ class DepositControllerTest {
     void yearTotalAmount() throws Exception {
 
         ResultActions result = mockMvc.perform(
-                get("/api/deposit/year-total-amount?year=2021")
+                get("/api/deposit/year-total-amount?year=2020")
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON)
         );
@@ -89,7 +92,7 @@ class DepositControllerTest {
     void timeUserDesc() throws Exception {
 
         ResultActions result = mockMvc.perform(
-                get("/api/deposit/time-user-desc?start_year=2020&end_year=2020")
+                get("/api/deposit/time-user-desc?start_year=2020&end_year=2021")
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON)
         );

@@ -11,6 +11,9 @@ import java.time.LocalDate;
 
 import static org.springframework.beans.BeanUtils.copyProperties;
 
+/**
+ * 계좌내역 Dto
+ */
 @Getter
 @Setter
 @ToString

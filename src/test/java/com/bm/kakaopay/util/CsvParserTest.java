@@ -12,6 +12,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * CSV 파싱 테스트
+ */
 class CsvParserTest {
 
     private final static Logger log = LoggerFactory.getLogger(CsvParserTest.class);

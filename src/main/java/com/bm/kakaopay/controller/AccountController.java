@@ -30,8 +30,8 @@ public class AccountController {
     private final AccountService accountService;
 
     @PostMapping(path = "add")
-    @Operation(summary = "사용자 결제 인증 결과 페이지이동 - 2 Step (BOKU API WEB -> 다날 API WEB",
-            description = "UI에서 사용자가 결제 인증 후 다날 API서버에 인증결과 페이지 이동(Redirect)")
+    @Operation(summary = "계좌 추가",
+            description = "계좌 추가")
     public ApiResult<AccountAddResponse> add(@Valid @RequestBody AccountAddRequest accountAddRequest) {
         return ApiUtils.success(accountService.addAccount(accountAddRequest)
                 .orElseThrow(() -> new AccountFailException("계좌 추가에 실패하였습니다."))
@@ -39,6 +39,8 @@ public class AccountController {
     }
 
     @GetMapping(path = "list")
+    @Operation(summary = "계좌 목록",
+            description = "계좌 목록")
     public ApiResult<List<AccountDto>> list() {
         return ApiUtils.success(accountService.listAccount().stream()
         .map(AccountDto::new)

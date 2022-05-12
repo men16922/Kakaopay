@@ -10,6 +10,9 @@ import org.apache.logging.log4j.core.config.plugins.validation.constraints.Requi
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * 계좌내역 추가 응답 Dto
+ */
 @ToString
 @Setter
 @Getter

@@ -11,6 +11,9 @@ import java.time.LocalDate;
 
 import static org.springframework.beans.BeanUtils.copyProperties;
 
+/**
+ * 사용자 Dto
+ */
 @Getter
 @Setter
 @ToString

@@ -5,6 +5,9 @@ import lombok.*;
 
 import javax.persistence.*;
 
+/**
+ * 계좌 domain
+ */
 @ToString
 @Getter
 @Setter

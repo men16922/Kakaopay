@@ -5,8 +5,8 @@ import com.bm.kakaopay.domain.AccountHistory;
 import com.bm.kakaopay.dto.deposit.AgeGroupAmountDto;
 import com.bm.kakaopay.dto.deposit.TimeUserDescDto;
 import com.bm.kakaopay.dto.deposit.YearTotalAmountDto;
-import com.bm.kakaopay.dto.users.UserAccountRequest;
-import com.bm.kakaopay.dto.users.UserAccountResponse;
+import com.bm.kakaopay.dto.deposit.UserAccountRequest;
+import com.bm.kakaopay.dto.deposit.UserAccountResponse;
 import com.bm.kakaopay.exception.AccountFailException;
 import com.bm.kakaopay.exception.AccountHistoryFailException;
 import com.bm.kakaopay.exception.UserFailException;
@@ -22,6 +22,9 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 예치금 서비스
+ */
 @Slf4j
 @RequiredArgsConstructor
 @Service
@@ -34,6 +37,11 @@ public class DepositService {
 
     private final AccountHistoryRepository accountHistoryRepository;
 
+    /**
+     * 사용자를 입력받아, 사용자의 계좌별 예치금을 출력
+     * @param userAccountRequest
+     * @return
+     */
     @Transactional(readOnly = true)
     public List<UserAccountResponse> userAccounts(UserAccountRequest userAccountRequest) {
 
@@ -76,6 +84,10 @@ public class DepositService {
         return userAccountResponseList;
     }
 
+    /**
+     * 나이대별 평균예치금
+     * @return
+     */
     @Transactional(readOnly = true)
     public List<AgeGroupAmountDto> ageGroupAmount() {
         List<Object[]> ageGroupAmountList = accountHistoryRepository.findAgeGroupAmount();
@@ -90,6 +102,11 @@ public class DepositService {
         return ageGroupAmountDtoList;
     }
 
+    /**
+     * 년도를 입력받아, 해당년도의 예치금 총액을 출력
+     * @param year
+     * @return
+     */
     @Transactional(readOnly = true)
     public YearTotalAmountDto yearTotalAmount(String year) {
 
@@ -100,6 +117,12 @@ public class DepositService {
                 .build();
     }
 
+    /**
+     * 기간을 입력받아, 돈을 많이 예치한 사용자 순으로 정렬해서 출력
+     * @param startYear
+     * @param endYear
+     * @return
+     */
     @Transactional(readOnly = true)
     public List<TimeUserDescDto> timeUserDesc(String startYear, String endYear) {
 
