@@ -1,5 +1,8 @@
 package com.bm.kakaopay.code;
 
+/**
+ * 응답시 Result key enum
+ */
 public enum Result {
     USER_ADD_SUCCESS("user add succeeded"),
     ACCOUNT_ADD_SUCCESS("account add succeeded"),

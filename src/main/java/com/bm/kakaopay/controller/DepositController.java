@@ -8,14 +8,19 @@ import com.bm.kakaopay.dto.users.UserAccountRequest;
 import com.bm.kakaopay.dto.users.UserAccountResponse;
 import com.bm.kakaopay.service.DepositService;
 import com.bm.kakaopay.util.ApiUtils;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * 예치금 컨트롤러
+ */
 @RestController
 @RequiredArgsConstructor
+@Tag(name = "예치금 추가과제")
 @RequestMapping("api/deposit/")
 public class DepositController {
 
